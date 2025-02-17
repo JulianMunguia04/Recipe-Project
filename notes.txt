@@ -1,0 +1,22 @@
+homepage
+-render recipe
+-proportions
+-photo
+-view
+-edit
+-new recipe
+-mutple pages?
+
+new recipe
+-create new recipe
+
+recipe page
+-using id
+-view
+-edit
+-delete
+-confirm delete
+
+edit page
+-edit infomriton of recipe
+
