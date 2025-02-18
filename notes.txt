@@ -20,3 +20,13 @@ recipe page
 edit page
 -edit infomriton of recipe
 
+database
+-name:
+-description
+-ingredients
+  -quantity
+  -units
+-uploaded
+-last-edited
+-author
+-instructioins

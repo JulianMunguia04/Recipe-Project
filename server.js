@@ -16,21 +16,17 @@ mongoose.connect('mongodb://127.0.0.1:27017/users', {
 
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-  res.render('index', {text:'Homepage'})
-}) 
-
-app.get('/test', async (req, res) =>{
+app.get('/', async (req, res) => {
   const recipes = await Recipe.find()
-  res.send(recipes)
-})
-
-app.use((req,res) =>{
-  res.redirect('/')
-})
+  res.render('index', {recipes: recipes.map(recipe=>recipe.name)})
+}) 
 
 const recipeRouter = require('./routes/recipe')
 
 app.use('/recipe', recipeRouter)
+
+app.use((req,res) =>{
+  res.redirect('/')
+})
 
 app.listen(500)
