@@ -19,12 +19,16 @@
   <main>
     <article>
       <h1>Welcome</h1>
-      <button> See All Recipes</button>
+      <img style="object-fit:contain; width: 700px" src="homepage.jpg">
+      <div class="buttons-home">
+        <button onclick="window.location.href='/recipe'">See All Recipes</button>
+        <button> Add Recipe</button>
+      </div>
     </article>
     <div class="recipe-side-preview">
       <h2 style="padding-left:10px; text-decoration: underline;">Our Newest Recipes</h2>
       <div style="margin-bottom:20px;"class="new-recipe">
-        <% for (let index = 0; index < Math.min(3, recipes.length); index++){ %>
+        <% for (let index = 0; index < Math.min(2, recipes.length); index++){ %>
           <h3>Recipe <%= index + 1 %></h3>
           <img class="recipe-preview-img" src=<%= recipes[index].img %>>
           <h3 class="recipe-preview-title"><%= recipes[index].name %></h3>
