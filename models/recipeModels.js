@@ -8,7 +8,9 @@ const recipeSchema = new mongoose.Schema({
   author: String,
   createdAt: Date,
   description: String,
-  updatedAt: Date
+  updatedAt: Date,
+  time: String,
+  img: String
 });
 
 const recipe = mongoose.model('recipes', recipeSchema);

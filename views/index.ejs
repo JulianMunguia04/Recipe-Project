@@ -22,7 +22,19 @@
       <button> See All Recipes</button>
     </article>
     <div class="recipe-side-preview">
-      <%= recipes %>
+      <h2 style="padding-left:10px; text-decoration: underline;">Our Newest Recipes</h2>
+      <div style="margin-bottom:20px;"class="new-recipe">
+        <% for (let index = 0; index < Math.min(3, recipes.length); index++){ %>
+          <h3>Recipe <%= index + 1 %></h3>
+          <img class="recipe-preview-img" src=<%= recipes[index].img %>>
+          <h3 class="recipe-preview-title"><%= recipes[index].name %></h3>
+          <div style="padding-left:20px;"><%= recipes[index].description %></div>
+          <div style="padding-left:20px;">Time: <%= recipes[index].time %></div>
+          <button onclick="window.location.href='/recipe/<%= recipes[index]._id%>'" class="recipe-preview-button">
+            View Recipe
+          </button>
+       <% } %>
+      </div>
     </div>
   </main>
 </body>
