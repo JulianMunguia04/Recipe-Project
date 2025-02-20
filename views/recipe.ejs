@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+  <header>
+    <h1>Recipe App</h1>
+  </header>
+  <div class="content">
+    <aside>
+
+    </aside>
+  </div>
+  <main>
+    <nav>
+      <h1>Recipe Book</h1>
+      <div class="buttons-home">
+        <button onclick="window.location.href='/'">Home</button>
+        <button onclick="window.location.href='/recipe/edit'"> Add Recipe</button>
+      </div>
+    </nav>
+    <article>
+      <% for (let index = 0; index < recipes.length; index++){ %>
+        <div class="recipe-full">
+          <div class="recipe-name"><%=recipes[index].name%></div>
+          <img class="recipe-image" src=<%=recipes[index].img %>>
+          <div class="recipe-description"><%=recipes[index].description%></div>
+          <div class="recipe-created"><%=recipes[index].createdAt%></div>
+          <div class="recipe-author"><%=recipes[index].author%></div>
+          <div class="recipe-buttons">
+            <button onclick="window.location.href='/recipe/<%=recipes[index]._id%>'">
+              View Recipe
+            </button>
+            <button onclick="window.location.href='/recipe/edit/<%=recipes[index]._id%>'">
+              Edit Recipe
+            </button>
+            <button onclick="window.location.href='/recipe/delete/<%=recipes[index]._id%>'">Delete</button>
+          </div>  
+        </div>
+      <% } %>
+    </article>
+  </main>
+</body>
+</html>
