@@ -2,9 +2,12 @@ const express = require("express")
 const mongoose = require('mongoose')
 const Recipe = require('./models/recipeModels.js')
 const app = express()
+const multer = require('multer');
+const path = require('path');
 
 app.use(express.static("public"), express.static('recipe_images'))
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://127.0.0.1:27017/users', {
   useNewUrlParser: true,

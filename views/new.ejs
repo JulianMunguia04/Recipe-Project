@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+  <header>
+    <h1>Recipe App</h1>
+  </header>
+  <div class="content">
+    <aside>
+
+    </aside>
+    <main>
+      <nav>
+        <h1>Recipe Book</h1>
+        <div class="buttons-home">
+          <button onclick="window.location.href='/'">Home</button>
+          <button onclick="window.location.href='/recipe/'"> View Recipes</button>
+        </div>
+      </nav>
+      <article>
+        <form action="/recipe/new" method="POST" enctype="multipart/form-data">
+          <label for="name">Recipe Name:</label>
+          <input type="text" id="name" name="name" required>
+          <div></div>
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required>
+          <div></div>
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="4" cols="50"></textarea>
+          <div></div>
+          <label for="ingredients">Ingredients:</label>
+          <textarea id="ingredients" name="ingredients" rows="4" cols="50"></textarea>
+          <div></div>
+          <label for="instructions">Instructions:</label>
+          <textarea id="instructions" name="instructions" rows="4" cols="50"></textarea>
+          <div></div>
+          <label for="time">Time:</label>
+          <input type="text" id="time" name="time" required>
+          <div></div>
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+          <div></div>
+          <button type="submit">Add Recipe</button>
+        </form>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

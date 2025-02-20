@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "67b51e8d5b3b415478043eb8"
+  },
+  "name": "Side of Salad",
+  "author": "Jim Halpert",
+  "createdAt": {
+    "$date": "2024-04-20T06:00:00.000Z"
+  },
+  "description": "Salad on the Side",
+  "ingredients": "Salad 1/2 Side 1/2",
+  "instructions": "Salad on the Side on Main Course",
+  "time": "5mins",
+  "img": "side_salad.jpg"
+},
+{
+  "_id": {
+    "$oid": "67b6abdd094a829f400d7cf5"
+  },
+  "name": "Chicken Piccata",
+  "ingredients": "Chiekn 1/2 Piccata 1/2",
+  "author": "Jim Halpert",
+  "createdAt": {
+    "$date": "2025-02-20T04:13:17.679Z"
+  },
+  "description": "Chicken Piccata Style",
+  "time": "25mins",
+  "img": "chicken_piccata.jpg",
+  "__v": 0
+}]

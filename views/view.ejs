@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="recipe.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="/edit.css">
 </head>
 <body>
   <header>
@@ -14,31 +14,28 @@
     <aside>
 
     </aside>
-  </div>
-  <main>
-    <nav>
-      <h1>Recipe Book</h1>
-      <div class="buttons-home">
-        <button onclick="window.location.href='/'">Home</button>
-        <button onclick="window.location.href='/recipe/new'"> Add Recipe</button>
-      </div>
-    </nav>
-    <article>
-      <% for (let index = 0; index < recipes.length; index++){ %>
+    <main>
+      <nav>
+        <h1><%=recipes.name%></h1>
+        <div class="buttons-home">
+          <button onclick="window.location.href='/'">Home</button>
+          <button onclick="window.location.href='/recipe/'"> View Recipes</button>
+        </div>
+      </nav>
+      <article>
         <div class="recipe-full">
-          <div class="recipe-name"><%=recipes[index].name%></div>
-          <img class="recipe-image" src=<%=recipes[index].img %>>
-          <div class="recipe-description"><%=recipes[index].description%></div>
-          <div class="recipe-created"><%=recipes[index].createdAt%></div>
-          <div class="recipe-author"><%=recipes[index].author%></div>
+          <img class="recipe-image" src=<%=recipes.img %>>
+          <div class="recipe-description"><%=recipes.description%></div>
+          <div class="recipe-description"><%=recipes.ingredients%></div>
+          <div class="recipe-description"><%=recipes.instructions%></div>
+          <div class="recipe-description"><%=recipes.time%></div>
+          <div class="recipe-created"><%=recipes.createdAt%></div>
+          <div class="recipe-author"><%=recipes.author%></div>
           <div class="recipe-buttons">
-            <button onclick="window.location.href='/recipe/<%=recipes[index]._id%>'">
-              View Recipe
-            </button>
-            <button onclick="window.location.href='/recipe/edit/<%=recipes[index]._id%>'">
+            <button onclick="window.location.href='/recipe/edit/<%=recipes._id%>'">
               Edit Recipe
             </button>
-            <form style="display:inline-block" onsubmit="deleteRecipe(event, '<%=recipes[index]._id%>')">
+            <form style="display:inline-block" onsubmit="deleteRecipe(event, '<%=recipes._id%>')">
               <button type="submit">Delete</button>
             </form>
             <script>
@@ -59,11 +56,11 @@
                 })
                 .catch(error => console.error('Error deleting recipe:', error));
               }
-            </script>            
-          </div>  
-        </div>
-      <% } %>
-    </article>
-  </main>
+            </script>
+          </div>
+        </div>    
+      </article>
+    </main>
+  </div>
 </body>
 </html>
